@@ -1,0 +1,1138 @@
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --pink: #f19bb3;
+    --pink-dark: #d96f91;
+
+    --blue: #91cce8;
+    --blue-dark: #4c9fc7;
+
+    --cream: #fffaf8;
+
+    --text: #66575d;
+
+    --gold: #d6aa62;
+
+}
+
+body {
+
+    min-height: 100vh;
+
+    font-family: "Montserrat", sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #ffdce6,
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            #dff4ff,
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fff5f7,
+            #ffffff,
+            #f1fbff
+        );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px 15px;
+
+    overflow-x: hidden;
+
+    color: var(--text);
+
+}
+
+
+/* =========================================
+   FONDO DECORATIVO
+========================================= */
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 0;
+
+}
+
+
+/* Corazones */
+
+.floating-heart {
+
+    position: absolute;
+
+    font-size: 60px;
+
+    color: rgba(240, 150, 177, 0.35);
+
+    animation:
+        float 6s ease-in-out infinite;
+
+}
+
+.heart-1 {
+
+    left: 5%;
+
+    top: 15%;
+
+}
+
+.heart-2 {
+
+    right: 7%;
+
+    top: 10%;
+
+    animation-delay: 1s;
+
+}
+
+.heart-3 {
+
+    left: 8%;
+
+    bottom: 10%;
+
+    animation-delay: 2s;
+
+}
+
+.heart-4 {
+
+    right: 6%;
+
+    bottom: 12%;
+
+    animation-delay: 3s;
+
+}
+
+
+/* Estrellas */
+
+.star {
+
+    position: absolute;
+
+    color: var(--gold);
+
+    font-size: 25px;
+
+    opacity: 0.5;
+
+    animation:
+        sparkle 3s ease-in-out infinite;
+
+}
+
+.star-1 {
+
+    left: 18%;
+
+    top: 12%;
+
+}
+
+.star-2 {
+
+    right: 20%;
+
+    top: 25%;
+
+    animation-delay: 1s;
+
+}
+
+.star-3 {
+
+    left: 20%;
+
+    bottom: 20%;
+
+    animation-delay: 2s;
+
+}
+
+.star-4 {
+
+    right: 18%;
+
+    bottom: 15%;
+
+    animation-delay: 1.5s;
+
+}
+
+
+/* Nubes */
+
+.cloud {
+
+    position: absolute;
+
+    font-size: 80px;
+
+    color: white;
+
+    opacity: 0.35;
+
+}
+
+.cloud-1 {
+
+    left: 10%;
+
+    top: 3%;
+
+}
+
+.cloud-2 {
+
+    right: 10%;
+
+    bottom: 3%;
+
+}
+
+
+@keyframes float {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(-5deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-20px)
+            rotate(5deg);
+
+    }
+
+}
+
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+
+        opacity: 0.25;
+
+        transform: scale(0.8);
+
+    }
+
+    50% {
+
+        opacity: 0.8;
+
+        transform: scale(1.2);
+
+    }
+
+}
+
+
+/* =========================================
+   TARJETA
+========================================= */
+
+.invitation {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(94%, 680px);
+
+    padding: 55px 50px 45px;
+
+    background:
+        rgba(255, 255, 255, 0.96);
+
+    border-radius: 35px;
+
+    border: 2px solid rgba(
+        255,
+        255,
+        255,
+        0.9
+    );
+
+    box-shadow:
+
+        0 30px 80px
+        rgba(
+            100,
+            70,
+            80,
+            0.18
+        ),
+
+        0 5px 20px
+        rgba(
+            255,
+            255,
+            255,
+            0.8
+        );
+
+    text-align: center;
+
+    animation:
+        cardAppear 1s ease;
+
+    overflow: hidden;
+
+}
+
+
+.invitation::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+
+    height: 320px;
+
+    border-radius: 50%;
+
+    background: #ffe0e8;
+
+    top: -190px;
+
+    left: -100px;
+
+    opacity: 0.5;
+
+}
+
+
+.invitation::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+
+    height: 320px;
+
+    border-radius: 50%;
+
+    background: #e0f5ff;
+
+    right: -120px;
+
+    bottom: -200px;
+
+    opacity: 0.55;
+
+}
+
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(0.96);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================
+   DECORACIÓN SUPERIOR
+========================================= */
+
+.top-decoration {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    color: var(--gold);
+
+    font-size: 22px;
+
+    margin-bottom: 18px;
+
+}
+
+
+/* =========================================
+   TÍTULOS
+========================================= */
+
+.small-title {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    font-weight: 600;
+
+    color: #a38e95;
+
+    margin-bottom: 15px;
+
+}
+
+
+h1 {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 72px;
+
+    line-height: 0.9;
+
+    color: #62535a;
+
+    margin-bottom: 15px;
+
+}
+
+
+h1 span {
+
+    color: var(--pink-dark);
+
+    display: block;
+
+}
+
+
+/* =========================================
+   BEBÉ
+========================================= */
+
+.baby-icon {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 75px;
+
+    margin: 15px 0;
+
+    animation:
+        babyFloat 3s ease-in-out infinite;
+
+}
+
+
+@keyframes babyFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-10px);
+
+    }
+
+}
+
+
+/* =========================================
+   NOMBRES
+========================================= */
+
+.parents {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 34px;
+
+    color: var(--pink-dark);
+
+    margin-bottom: 12px;
+
+}
+
+
+/* =========================================
+   MENSAJE
+========================================= */
+
+.message {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #806f76;
+
+}
+
+
+/* =========================================
+   MISTERIO
+========================================= */
+
+.mystery {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 470px;
+
+    margin: 28px auto;
+
+    padding: 25px 20px;
+
+    border-radius: 25px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff0f5,
+            #f0faff
+        );
+
+    border:
+
+        1px solid
+        #f0dce3;
+
+    box-shadow:
+
+        0 10px 30px
+        rgba(
+            100,
+            80,
+            90,
+            0.07
+        );
+
+}
+
+
+.gift {
+
+    font-size: 48px;
+
+    animation:
+        giftFloat 2s ease-in-out infinite;
+
+}
+
+
+@keyframes giftFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px);
+
+    }
+
+}
+
+
+.mystery h2 {
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 40px;
+
+    color: #76646b;
+
+    margin-top: 5px;
+
+}
+
+
+.question {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 12px 0;
+
+}
+
+
+.question span {
+
+    font-size: 25px;
+
+}
+
+
+.question strong {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 50px;
+
+    height: 50px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    font-size: 30px;
+
+    color: #9b8990;
+
+    box-shadow:
+
+        0 5px 15px
+        rgba(
+            100,
+            80,
+            90,
+            0.1
+        );
+
+}
+
+
+.mystery p {
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    color: #89777e;
+
+}
+
+
+.mystery-text {
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 21px !important;
+
+    margin-top: 8px;
+
+    color: #806d75 !important;
+
+}
+
+
+/* =========================================
+   INFORMACIÓN
+========================================= */
+
+.event {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 18px;
+
+    margin: 28px auto;
+
+    max-width: 590px;
+
+    background: #fff8fa;
+
+    border-radius: 20px;
+
+    border:
+
+        1px solid
+        #f1e1e6;
+
+}
+
+
+.event-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    text-align: left;
+
+}
+
+
+.event-icon {
+
+    font-size: 25px;
+
+}
+
+
+.event-item span {
+
+    display: block;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    color: #a59298;
+
+    margin-bottom: 3px;
+
+}
+
+
+.event-item strong {
+
+    display: block;
+
+    font-size: 10px;
+
+    color: #69585f;
+
+}
+
+
+.line {
+
+    width: 1px;
+
+    height: 38px;
+
+    background: #ead9df;
+
+}
+
+
+/* =========================================
+   MENSAJE FINAL
+========================================= */
+
+.final-message {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 25px;
+
+}
+
+
+.baby-feet {
+
+    font-size: 35px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.final-message p {
+
+    max-width: 430px;
+
+    margin: auto;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: #817077;
+
+}
+
+
+.final-message span {
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 24px;
+
+    color: var(--pink-dark);
+
+}
+
+
+/* =========================================
+   PIE
+========================================= */
+
+.footer {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 25px;
+
+    color: #a18d94;
+
+    font-size: 10px;
+
+}
+
+
+.footer span {
+
+    display: block;
+
+}
+
+
+.footer strong {
+
+    display: block;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 22px;
+
+    color: #7c6970;
+
+    margin-top: 3px;
+
+}
+
+
+.footer div {
+
+    color: var(--pink);
+
+    font-size: 20px;
+
+    margin-top: 5px;
+
+}
+
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 650px) {
+
+    body {
+
+        padding: 15px 0;
+
+    }
+
+
+    .invitation {
+
+        width: 94%;
+
+        padding: 40px 20px 30px;
+
+        border-radius: 28px;
+
+    }
+
+
+    .small-title {
+
+        font-size: 8px;
+
+        letter-spacing: 2.5px;
+
+    }
+
+
+    h1 {
+
+        font-size: 57px;
+
+    }
+
+
+    .baby-icon {
+
+        font-size: 60px;
+
+    }
+
+
+    .parents {
+
+        font-size: 29px;
+
+    }
+
+
+    .message {
+
+        font-size: 13px;
+
+    }
+
+
+    .mystery {
+
+        padding: 20px 15px;
+
+    }
+
+
+    .mystery h2 {
+
+        font-size: 34px;
+
+    }
+
+
+    .event {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 12px;
+
+        padding: 18px 25px;
+
+    }
+
+
+    .event-item {
+
+        justify-content: center;
+
+    }
+
+
+    .line {
+
+        width: 100%;
+
+        height: 1px;
+
+    }
+
+
+    .floating-heart {
+
+        font-size: 40px;
+
+    }
+
+
+    .cloud {
+
+        font-size: 55px;
+
+    }
+
+}
+
+/* =========================================
+   BOTÓN CONFIRMAR ASISTENCIA
+========================================= */
+
+.confirm-button {
+
+    position: relative;
+
+    z-index: 5;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin: 20px auto 22px;
+
+    padding: 13px 25px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            100deg,
+            #f29ab2,
+            #a8d9ef
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(
+            210,
+            140,
+            165,
+            0.25
+        );
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.confirm-button:hover {
+
+    transform:
+        translateY(-3px)
+        scale(1.03);
+
+    box-shadow:
+        0 12px 25px
+        rgba(
+            210,
+            140,
+            165,
+            0.35
+        );
+
+}
+
+
+.confirm-button:active {
+
+    transform:
+        scale(0.97);
+
+}
